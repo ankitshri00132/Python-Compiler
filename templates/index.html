@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python IDE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="editor-container">
+            <div class="toolbar">
+                <button id="run-btn" class="btn primary">Run</button>
+                <button id="save-btn" class="btn secondary">Save</button>
+            </div>
+            <div class="editor-wrapper">
+                <div class="editor-header">
+                    <h3>Python Code Editor</h3>
+                    <div class="example-code">
+                        <select id="example-select" class="btn secondary">
+                            <option value="">Select Example</option>
+                            <option value="hello">Hello World</option>
+                            <option value="calculator">Basic Calculator</option>
+                            <option value="list">List Operations</option>
+                            <option value="loop">For Loop</option>
+                            <option value="function">Function Example</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-area">
+                    <div id="editor" style="height: 100%; width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="output-container">
+            <div class="output-header">
+                <h3>Output</h3>
+                <button id="clear-output" class="btn secondary">Clear</button>
+            </div>
+            <div id="output" class="output"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
